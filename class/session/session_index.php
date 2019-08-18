@@ -7,7 +7,7 @@
     $val_01         = $_POST['val_01'];
     $val_02         = $_POST['val_02'];
     $val_03         = $_POST['val_03'];
-    $val_04         = NULL;
+    $val_04         = getCodeLogin();
     $val_05         = getUUID();
     $val_06         = $_SERVER['REMOTE_ADDR'];
 
@@ -31,7 +31,7 @@
         $_SESSION['log_01']     = $val_01;
         $_SESSION['log_02']     = $val_02;
         $_SESSION['log_03'] 	= $val_03;
-        $_SESSION['log_04'] 	= $resultJSON['data']['login_code'];
+        $_SESSION['log_04'] 	= $val_04;
         $_SESSION['log_05'] 	= $val_05;
         $_SESSION['log_06'] 	= $val_06;
         $_SESSION['expire']     = time() + 3600;

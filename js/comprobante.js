@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var codigo		= document.getElementById('tableCodigo').className;
-	var urlDominio = 'http://www.carsa.com.py/carsito_api/public/api/v1/100/' + codigo;
+	var urlDominio	= 'http://api.carsa.com.py/carsito_api/public/v1/100/' + codigo;
 	
 	$('#tableLoad').DataTable({
 		processing	: true,
