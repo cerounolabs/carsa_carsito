@@ -77,7 +77,7 @@
                                     <select id="val_01" name="val_01" class="select2 form-control form-control-lg custom-select" aria-describedby="basic-addon1">
                                         <optgroup label="Tipo Documento">
                                        		<option value="1">C.I.P.</option>
-                                       		<option value="2">R.U.C</option>
+                                       		<option value="2">R.U.C.</option>
                                     	</optgroup>
                                 	</select>
                                 </div>

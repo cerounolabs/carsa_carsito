@@ -1,10 +1,10 @@
 <?php
     require '../class/function/curl_api.php';
     require '../class/function/function.php';
-//    require '../class/session/session_system.php';
+    require '../class/session/session_system.php';
 
-//    $codeRest       = $_GET['code'];
-//    $msgRest        = $_GET['msg'];
+    $codeRest       = $_GET['code'];
+    $msgRest        = $_GET['msg'];
 ?>
 
 <!DOCTYPE html>

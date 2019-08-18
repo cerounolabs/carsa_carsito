@@ -1,4 +1,31 @@
 <?php
+    function mssqlConectar() {
+//      PRODUCCION
+/*
+        $serverName     = "SRVDESA01, 1433";
+        $serverInfo     = array("Database"=>"PRODUCCION_AYER", "UID"=>"czelaya", "PWD"=>"carsa_2019", "CharacterSet"=>"UTF-8", "MultipleActiveResultSets"=>"false");
+*/
+//      TESTING
+        $serverName     = "SRVDESA01, 1433";
+        $serverInfo     = array("Database"=>"PRODUCCION_AYER", "UID"=>"czelaya", "PWD"=>"carsa_2019", "CharacterSet"=>"UTF-8", "MultipleActiveResultSets"=>"false");
+        $serverConn     = sqlsrv_connect($serverName, $serverInfo);
+
+        if($serverConn) {
+            return $serverConn;
+        } else {
+            die(mssqlFormatErrors(sqlsrv_errors()));
+        }
+    }
+
+    function mssqlFormatErrors($errors) {
+        echo "MSSQL Erros<br/>";
+        foreach ($errors as $error) {
+            echo "SQLSTATE: ".$error['SQLSTATE']."<br/>";
+            echo "Code:     ".$error['code']."<br/>";
+            echo "Message:  ".$error['message']."<br/>";
+        }
+    }
+
     function getUUID(){
         $data    = random_bytes(16);
         $data[6] = chr(ord($data[6]) & 0x0f | 0x40); 
@@ -8,6 +35,11 @@
 
     function getFechaHora(){
         $result = date("YmdHis");
+        return $result;
+    }
+
+    function getCodeLogin(){
+        $result = random_int(1000, 9999);
         return $result;
     }
 ?>
