@@ -104,9 +104,9 @@
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon2"><i class="ti-mobile"></i></span>
+                                        <span class="input-group-text" id="basic-addon2"><i class="ti-email"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" id="val_03" name="val_03" aria-label="val_03" aria-describedby="basic-addon1" value="<?php echo $log_03; ?>" placeholder="Nro. Tel&eacute;fono" required readonly>
+                                    <input type="email" class="form-control form-control-lg" id="val_03" name="val_03" aria-label="val_03" aria-describedby="basic-addon1" value="<?php echo $log_03; ?>" placeholder="Email" required readonly>
                                 </div>
 
                                 <div class="input-group mb-3">
