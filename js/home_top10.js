@@ -1,4 +1,4 @@
-(document).ready(function() {
+$(document).ready(function() {
 	var codigo		= document.getElementById('tableCodigoTop10').className;
 	var urlDominio	= 'http://api.carsa.com.py/carsito_api/public/v1/100/top10/' + codigo;
 	
