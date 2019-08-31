@@ -12,21 +12,7 @@
     $val_06         = $_SERVER['REMOTE_ADDR'];
 
     if ($val_04 == $_SESSION['log_04'] && $val_06 == $_SESSION['log_06']) {
-        $dataJSON       = json_encode(
-            array(
-                'usuario_var01' => $val_01,
-                'usuario_var02' => $val_02,
-                'usuario_var03' => $val_03,
-                'usuario_var04'	=> $val_04,
-                'usuario_var05'	=> $val_05,
-                'usuario_var06'	=> $val_06,
-                'usuario_var07'	=> $_SERVER['HTTP_HOST'],
-                'usuario_var08'	=> $_SERVER['HTTP_USER_AGENT'],
-                'usuario_var09'	=> $_SERVER['HTTP_REFERER']
-            ));
-
-        $resultJSON     = get_curl('000/login', $dataJSON);
-        $resultJSON     = json_decode($resultJSON, true);
+        $resultJSON     = get_curl('000/login/'.$val_05);
 
         if ($resultJSON['code'] === 200) {
             $_SESSION['cli_01']     = $resultJSON['data']['cliente_cuenta'];
