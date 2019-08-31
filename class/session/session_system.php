@@ -17,6 +17,7 @@
         $cli_01 = $_SESSION['cli_01'];
         $cli_02 = $_SESSION['cli_02'];
         $cli_03 = $_SESSION['cli_03'];
+        $cli_04 = $_SESSION['cli_04'];
 
         if (isset($log_05) && isset($cli_01) && isset($log_06)) {
             if ($val_06 === $log_06) {

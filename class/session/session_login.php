@@ -15,9 +15,10 @@
         $resultJSON     = get_curl('000/login/'.$val_05);
 
         if ($resultJSON['code'] === 200) {
-            $_SESSION['cli_01']     = $resultJSON['data']['cliente_cuenta'];
-            $_SESSION['cli_02']     = $resultJSON['data']['cliente_nombre'];
-            $_SESSION['cli_03']     = $resultJSON['data']['cliente_apellido'];
+            $_SESSION['cli_01']     = $resultJSON['data'][0]['cliente_cuenta'];
+            $_SESSION['cli_02']     = $resultJSON['data'][0]['cliente_nombre'];
+            $_SESSION['cli_03']     = $resultJSON['data'][0]['cliente_apellido'];
+            $_SESSION['cli_04']     = $resultJSON['data'][0]['cliente_fecha_nacimiento'];
             $_SESSION['expire']     = time() + 3600;
             
             header('Location: ../../public/home.php');
