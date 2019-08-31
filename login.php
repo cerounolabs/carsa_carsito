@@ -23,6 +23,9 @@
             $selRUC = 'selected';
         }
     }
+
+    $codeRest       = $_GET['code'];
+    $msgRest        = $_GET['msg'];
 ?>
 
 <!DOCTYPE html>
@@ -147,6 +150,10 @@
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!--toast -->
+    <script src="assets/libs/toastr/build/toastr.min.js"></script>
+    <script src="assets/extra-libs/toastr/toastr-init.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
@@ -161,6 +168,18 @@
         $("#recoverform").fadeIn();
     });
     </script>
+
+<?php  
+    if ($codeRest == 401) {
+?>
+    <script>
+        $(function() {
+            toastr.error('<?php echo $msgRest; ?>', 'Error!');
+        });
+    </script>
+<?php
+    }
+?>
 </body>
 
 </html>

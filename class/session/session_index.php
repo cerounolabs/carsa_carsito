@@ -36,7 +36,7 @@
         $_SESSION['log_06'] 	= $val_06;
         $_SESSION['expire']     = time() + 3600;
         
-        header('Location: ../../login.php');
+        header('Location: ../../login.php?code=401&msg='.$val_04);
     } else {
         $val_01                 = NULL;
         $val_02                 = NULL;
