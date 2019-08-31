@@ -4,7 +4,7 @@
     require '../../class/function/curl_api.php';
     require '../../class/function/function.php';
 
-    $val_01         = $_POST['val_01'];
+    $val_01         = $_SESSION['log_01'];
     $val_02         = $_POST['val_02'];
     $val_03         = $_POST['val_03'];
     $val_04         = $_POST['val_04'];
@@ -25,7 +25,7 @@
                 'usuario_var09'	=> $_SERVER['HTTP_REFERER']
             ));
 
-        $resultJSON     = post_curl('000/login', $dataJSON);
+        $resultJSON     = get_curl('000/login', $dataJSON);
         $resultJSON     = json_decode($resultJSON, true);
 
         if ($resultJSON['code'] === 200) {
@@ -53,6 +53,6 @@
         $val_05         = NULL;
         $val_06         = NULL;
 
-        header('Location: ../../login.php');
+        header('Location: ../../login.php?code=401&msg=El PIN no es correcto, favor de ingresar nuevamente');
     }
 ?>

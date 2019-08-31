@@ -1,13 +1,16 @@
 <?php
-    function mssqlConectar() {
-//      PRODUCCION
-/*
-        $serverName     = "SRVDESA01, 1433";
-        $serverInfo     = array("Database"=>"PRODUCCION_AYER", "UID"=>"czelaya", "PWD"=>"carsa_2019", "CharacterSet"=>"UTF-8", "MultipleActiveResultSets"=>"false");
-*/
-//      TESTING
-        $serverName     = "SRVDESA01, 1433";
-        $serverInfo     = array("Database"=>"PRODUCCION_AYER", "UID"=>"czelaya", "PWD"=>"carsa_2019", "CharacterSet"=>"UTF-8", "MultipleActiveResultSets"=>"false");
+    function mssqlConectar($var01) {
+        switch ($var01) {
+            case 'P'://PRODUCCION
+                $serverName     = "SRVDESA01, 1433";
+                $serverInfo     = array("Database"=>"PRODUCCION_AYER", "UID"=>"czelaya", "PWD"=>"carsa_2019", "CharacterSet"=>"UTF-8", "MultipleActiveResultSets"=>"false");
+                break;
+            case 'T'://TESTING
+                $serverName     = "SRVDESA01, 1433";
+                $serverInfo     = array("Database"=>"PRODUCCION_AYER", "UID"=>"czelaya", "PWD"=>"carsa_2019", "CharacterSet"=>"UTF-8", "MultipleActiveResultSets"=>"false");
+                break;
+        }
+
         $serverConn     = sqlsrv_connect($serverName, $serverInfo);
 
         if($serverConn) {

@@ -13,6 +13,9 @@
     
     session_unset();
     session_destroy();
+
+    $codeRest       = $_GET['code'];
+    $msgRest        = $_GET['msg'];
 ?>
 
 <!DOCTYPE html>
@@ -144,6 +147,18 @@
         $("#recoverform").fadeIn();
     });
     </script>
+
+<?php  
+    if ($codeRest == 401) {
+?>
+    <script>
+        $(function() {
+            toastr.error('<?php echo $msgRest; ?>', 'Error!');
+        });
+    </script>
+<?php
+    }
+?>
 </body>
 
 </html>
