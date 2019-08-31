@@ -70,7 +70,45 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <!-- basic table -->
-
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                	<h4 class="col-10 card-title">&Uacute;ltimos Pagos</h4>
+								</div>
+                                <div class="table-responsive">
+                                    <table id="tableLoadTop10" class="table table-striped table-bordered">
+                                        <thead id="tableCodigoTop10" class="<?php echo $cli_01; ?>">
+                                            <tr>
+                                                <th>C&Oacute;DIGO</th>
+                                                <th>OPERACI&Oacute;N</th>
+                                                <th>FECHA PAGO</th>
+                                                <th>HORA PAGO</th>
+                                                <th>NRO. COMPROBANTE</th>
+                                                <th>IMPORTE COMPROBANTE</th>
+                                                <th style="width: 130px;">DESCARGAR</th>
+                                                <th style="width: 130px;">DESCARGAR</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>C&Oacute;DIGO</th>
+                                                <th>OPERACI&Oacute;N</th>
+                                                <th>FECHA PAGO</th>
+                                                <th>HORA PAGO</th>
+                                                <th>NRO. COMPROBANTE</th>
+                                                <th>IMPORTE COMPROBANTE</th>
+                                                <th style="width: 130px;">DESCARGAR</th>
+                                                <th style="width: 130px;">DESCARGAR</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -111,8 +149,7 @@
 <?php
     }
 ?>
-<!--
-    <script src="../js/home.js"></script>
--->
+
+    <script src="../js/home_top10.js"></script>
 </body>
 </html>
