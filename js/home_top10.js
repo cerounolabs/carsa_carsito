@@ -28,9 +28,9 @@ $(document).ready(function() {
 		columns		: [
 			{ data				: 'caja_cuenta', name : 'caja_cuenta'},
 			{ data				: 'caja_operacion', name : 'caja_operacion'},
+			{ data				: 'caja_numero_movimiento', name : 'caja_numero_movimiento'},
 			{ data				: 'caja_fecha', name : 'caja_fecha'},
 			{ data				: 'caja_hora', name : 'caja_hora'},
-			{ data				: 'caja_numero_movimiento', name : 'caja_numero_movimiento'},
 			{ data				: 'caja_monto', name : 'caja_monto'},
 			{ render			: function (data, type, full, meta) {return '<a href="../report/comprobante.php?id1=' + full.caja_operacion + '&id2='+ full.caja_numero_factura +'" role="button" class="btn btn-success"><i class="ti-printer"></i>&nbsp;</a>';}},
 			{ render			: function (data, type, full, meta) {return '<a href="../report/comprobante.php?id1=' + full.caja_operacion + '&id2='+ full.caja_numero_recibo +'" role="button" class="btn btn-success"><i class="ti-printer"></i>&nbsp;</a>';}},
