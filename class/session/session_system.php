@@ -20,16 +20,12 @@
         $cli_04 = $_SESSION['cli_04'];
 
         if (isset($log_05) && isset($cli_01) && isset($log_06)) {
-            if ($val_06 === $log_06) {
-                setlocale(LC_MONETARY, 'es_PY');
+            setlocale(LC_MONETARY, 'es_PY');
 
-                $_SESSION['expire'] = time() + 3600;
-                $urlAct             = $_SERVER['REQUEST_URI'];
-                $urlAnt             = substr($_SERVER['HTTP_REFERER'], 39);
-                $urlPat             = strtoupper(substr(substr($_SERVER['SCRIPT_FILENAME'], 48), 0, -4));
-            } else {
-                header('Location: ../../class/session/session_logout.php');
-            }
+            $_SESSION['expire'] = time() + 3600;
+            $urlAct             = $_SERVER['REQUEST_URI'];
+            $urlAnt             = substr($_SERVER['HTTP_REFERER'], 39);
+            $urlPat             = strtoupper(substr(substr($_SERVER['SCRIPT_FILENAME'], 48), 0, -4));
         } else {
             header('Location: ../../class/session/session_logout.php');
         }
