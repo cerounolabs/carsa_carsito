@@ -84,11 +84,11 @@
                                                 <th>C&Oacute;DIGO</th>
                                                 <th>OPERACI&Oacute;N</th>
                                                 <th>FECHA PAGO</th>
-                                                <th>HORA PAGO</th>
                                                 <th>NRO. COMPROBANTE</th>
+                                                <th>HORA PAGO</th>
                                                 <th>IMPORTE COMPROBANTE</th>
-                                                <th style="width: 130px;">DESCARGAR</th>
-                                                <th style="width: 130px;">DESCARGAR</th>
+                                                <th>NRO. FACTURA</th>
+                                                <th>NRO. RECIBO</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -96,11 +96,11 @@
                                                 <th>C&Oacute;DIGO</th>
                                                 <th>OPERACI&Oacute;N</th>
                                                 <th>FECHA PAGO</th>
-                                                <th>HORA PAGO</th>
                                                 <th>NRO. COMPROBANTE</th>
+                                                <th>HORA PAGO</th>
                                                 <th>IMPORTE COMPROBANTE</th>
-                                                <th style="width: 130px;">DESCARGAR</th>
-                                                <th style="width: 130px;">DESCARGAR</th>
+                                                <th>NRO. FACTURA</th>
+                                                <th>NRO. RECIBO</th>
                                             </tr>
                                         </tfoot>
                                     </table>
