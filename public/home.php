@@ -3,8 +3,10 @@
     require '../class/function/function.php';
     require '../class/session/session_system.php';
 
-    $codeRest       = $_GET['code'];
-    $msgRest        = $_GET['msg'];
+    if(isset($_GET['code'])){
+        $codeRest       = $_GET['code'];
+        $msgRest        = $_GET['msg'];
+    }
 ?>
 
 <!DOCTYPE html>
