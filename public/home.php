@@ -83,8 +83,8 @@
                                             <tr>
                                                 <th>C&Oacute;DIGO</th>
                                                 <th>OPERACI&Oacute;N</th>
-                                                <th>FECHA PAGO</th>
                                                 <th>NRO. COMPROBANTE</th>
+                                                <th>FECHA PAGO</th>
                                                 <th>HORA PAGO</th>
                                                 <th>IMPORTE COMPROBANTE</th>
                                                 <th>NRO. FACTURA</th>
@@ -95,8 +95,8 @@
                                             <tr>
                                                 <th>C&Oacute;DIGO</th>
                                                 <th>OPERACI&Oacute;N</th>
-                                                <th>FECHA PAGO</th>
                                                 <th>NRO. COMPROBANTE</th>
+                                                <th>FECHA PAGO</th>
                                                 <th>HORA PAGO</th>
                                                 <th>IMPORTE COMPROBANTE</th>
                                                 <th>NRO. FACTURA</th>
