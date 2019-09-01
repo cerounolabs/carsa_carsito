@@ -22,6 +22,13 @@
             $selCIP = '';
             $selRUC = 'selected';
         }
+
+        $_SESSION['log_01'] = $log_01;
+        $_SESSION['log_02'] = $log_02;
+        $_SESSION['log_03'] = $log_03;
+        $_SESSION['log_04'] = $log_04;
+        $_SESSION['log_05'] = $log_05;
+        $_SESSION['log_06'] = $log_06;
     }
 
     $codeRest       = $_GET['code'];

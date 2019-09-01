@@ -1,5 +1,6 @@
 <?php
     session_start();    
+
     unset($_SESSION['log_01']);
     unset($_SESSION['log_02']);
     unset($_SESSION['log_03']);
