@@ -15,8 +15,10 @@
     session_unset();
     session_destroy();
 
-    $codeRest       = $_GET['code'];
-    $msgRest        = $_GET['msg'];
+    if(isset($_GET['code'])){
+        $codeRest       = $_GET['code'];
+        $msgRest        = $_GET['msg'];
+    }
 ?>
 
 <!DOCTYPE html>

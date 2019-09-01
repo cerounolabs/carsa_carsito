@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if(!isset($_SESSION)){ 
+        session_start(); 
+    }
 
     $expire = $_SESSION['expire'];
 
@@ -31,8 +33,10 @@
         $_SESSION['log_06'] = $log_06;
     }
 
-    $codeRest       = $_GET['code'];
-    $msgRest        = $_GET['msg'];
+    if(isset($_GET['code'])){
+        $codeRest       = $_GET['code'];
+        $msgRest        = $_GET['msg'];
+    }
 ?>
 
 <!DOCTYPE html>
