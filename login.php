@@ -87,8 +87,7 @@
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
-                        <span class="db"><img src="assets/images/logo-icon.png" alt="logo" /></span>
-                        <h5 class="font-medium m-b-20">CARSITO</h5>
+                        <span class="db"><img src="assets/images/logoCarsa.png" alt="logo" /></span>
                     </div>
                     <!-- Form -->
                     <div class="row">
