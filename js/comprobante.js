@@ -53,11 +53,13 @@ $(document).ready(function() {
 			{ targets			: [4], visible : true,  searchable : true,  orderData : [4, 0] },
 			{ targets			: [5], visible : true, 	searchable : true,  orderData : [5, 0] },
 			{ targets			: [6], visible : true,  searchable : true,  orderData : [6, 0] },
-			{ targets			: [7], visible : true,  searchable : true,  orderData : [7, 0] }
+			{ targets			: [7], visible : true,  searchable : true,  orderData : [7, 0] },
+			{ targets			: [8], visible : true,  searchable : true,  orderData : [8, 0] }
 		],
 		columns		: [
 			{ data				: 'caja_cuenta', name : 'caja_cuenta'},
 			{ data				: 'caja_operacion', name : 'caja_operacion'},
+			{ data				: 'caja_movimiento', name : 'caja_movimiento'},
 			{ data				: 'caja_cuota', name : 'caja_cuota'},
 			{ data				: 'caja_numero_movimiento', name : 'caja_numero_movimiento'},
 			{ data				: 'caja_fecha', name : 'caja_fecha'},
