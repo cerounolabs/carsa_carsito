@@ -3,10 +3,33 @@
     require '../class/function/function.php';
     require '../class/session/session_system.php';
 
+    $selecTodos     = '';
+    $selecActivos   = '';
+    $selecCancelados= '';
+
     if(isset($_POST['estadoOpe'])){ 
         $estadoOpe  = $_POST['estadoOpe'];
+
+        switch ($estadoOpe) {
+            case '1':
+                $selecTodos = 'selected';
+                break;
+
+            case '7':
+                $selecActivos   = 'selected';
+                break;
+
+            case '10':
+                $selecCancelados= 'selected';
+                break;
+            
+            default:
+                $selecTodos = 'selected';
+                break;
+        }
     } else {
         $estadoOpe  = 1;
+        $selecTodos = 'selected';
     }
 
     if(isset($_POST['fechaDesde'])){ 
@@ -140,9 +163,9 @@
                                     <div class="form-group">
                                         <label for="recipient-name" class="control-label">Operaciones con Estado:</label>
                                         <select class="custom-select mr-sm-2" id="estadoOpe" name="estadoOpe">
-                                            <option value="1">Todos</option>
-                                            <option value="7">Activos</option>
-                                            <option value="10">Cancelados</option>
+                                            <option value="1" <?php echo $selecTodos; ?>>Todos</option>
+                                            <option value="7" <?php echo $selecActivos; ?>>Activos</option>
+                                            <option value="10" <?php echo $selecCancelados; ?>>Cancelados</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
