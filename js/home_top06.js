@@ -24,7 +24,7 @@ $(document).ready(function() {
 			{ targets			: [1], visible : true,  searchable : true,  orderData : [1, 0] },
 			{ targets			: [2], visible : false, searchable : false, orderData : [2, 0] },
 			{ targets			: [3], visible : true,  searchable : true,  orderData : [3, 0] },
-			{ targets			: [4], visible : true,  searchable : true,  orderData : [4, 0] },
+			{ targets			: [4], visible : false, searchable : false, orderData : [4, 0] },
 			{ targets			: [5], visible : false, searchable : false, orderData : [5, 0] },
 			{ targets			: [6], visible : true,  searchable : true,  orderData : [6, 0] },
 			{ targets			: [7], visible : false, searchable : false, orderData : [7, 0] },

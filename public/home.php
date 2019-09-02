@@ -49,7 +49,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Home</h4>
+                        <h4 class="page-title">Bienvenido <?php echo $cli_02.' '.$cli_03; ?></h4>
                         <div class="d-flex align-items-center"></div>
                     </div>
                     <div class="col-7 align-self-center">
@@ -95,7 +95,7 @@
                                         <div class="d-flex no-block">
                                             <div class="align-self-end no-shrink">
                                                 <h2 class="m-b-0">₲ <?php echo $top03Value['operacion_proximo_monto']; ?></h2>
-                                                <h6 class="text-muted">(Cuotas Pagadas <?php echo $top03Value['operacion_cuota_cancelado'].' de '.$top03Value['operacion_cuota_cantidad']; ?>)</h6>
+                                                <h6 class="text-muted">(Cuota Nro <?php echo $top03Value['operacion_proximo_cuota'].' de '.$top03Value['operacion_cuota_cantidad']; ?>)</h6>
                                             </div>
                                             <div class="ml-auto">
                                                 <h2 class="m-b-0">
