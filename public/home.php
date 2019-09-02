@@ -127,6 +127,7 @@
                                             <tr class="bg-light">
                                                 <th class="border-top-0">C&Oacute;DIGO</th>
                                                 <th class="border-top-0">OPERACI&Oacute;N</th>
+                                                <th class="border-top-0">MOVIMIENTO</th>
                                                 <th class="border-top-0">CUOTA</th>
                                                 <th class="border-top-0">NRO. COMPROBANTE</th>
                                                 <th class="border-top-0">FECHA</th>

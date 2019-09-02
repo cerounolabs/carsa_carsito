@@ -92,7 +92,7 @@
                                     <div class="m-l-10">
                                         <h4 class="m-b-0"><?php echo $cli_02; ?></h4>
 										<p class=" m-b-0"><?php echo $cli_02.' '.$cli_03; ?></p>
-										<p class=" m-b-0"><?php echo $log_06; ?></p>
+										<p class=" m-b-0"><?php echo $cli_01.' | '.$log_06; ?></p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item" href="javascript:void(0)">
