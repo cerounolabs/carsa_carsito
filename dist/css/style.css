@@ -7616,7 +7616,7 @@ html[dir="ltr"] body .p-l-0 {
   /*This is for the logo bg*/
   /*This is for the sidebar bg*/ }
   #main-wrapper[data-layout='vertical'] .topbar .top-navbar .navbar-header[data-logobg='skin1'], #main-wrapper[data-layout='horizontal'] .topbar .top-navbar .navbar-header[data-logobg='skin1'] {
-    background: #3587d8; }
+    background: #3587d8; background: #27464e;}
   #main-wrapper[data-layout='vertical'] .topbar .top-navbar .navbar-header[data-logobg='skin2'], #main-wrapper[data-layout='horizontal'] .topbar .top-navbar .navbar-header[data-logobg='skin2'] {
     background: #d83939; }
   #main-wrapper[data-layout='vertical'] .topbar .top-navbar .navbar-header[data-logobg='skin3'], #main-wrapper[data-layout='horizontal'] .topbar .top-navbar .navbar-header[data-logobg='skin3'] {
@@ -7638,7 +7638,7 @@ html[dir="ltr"] body .p-l-0 {
   #main-wrapper[data-layout='vertical'] .topbar .navbar-collapse[data-navbarbg='skin1'],
   #main-wrapper[data-layout='vertical'] .topbar[data-navbarbg='skin1'], #main-wrapper[data-layout='horizontal'] .topbar .navbar-collapse[data-navbarbg='skin1'],
   #main-wrapper[data-layout='horizontal'] .topbar[data-navbarbg='skin1'] {
-    background: #3587d8; }
+    background: #3587d8; background: #27464e;}
   #main-wrapper[data-layout='vertical'] .topbar .navbar-collapse[data-navbarbg='skin2'],
   #main-wrapper[data-layout='vertical'] .topbar[data-navbarbg='skin2'], #main-wrapper[data-layout='horizontal'] .topbar .navbar-collapse[data-navbarbg='skin2'],
   #main-wrapper[data-layout='horizontal'] .topbar[data-navbarbg='skin2'] {
@@ -12314,6 +12314,7 @@ Padding margin property
   position: relative; }
   .auth-wrapper .auth-box {
     background: #fff;
+    background: #27464e;
     padding: 20px;
     box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
     max-width: 400px;

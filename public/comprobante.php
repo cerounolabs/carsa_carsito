@@ -3,9 +3,24 @@
     require '../class/function/function.php';
     require '../class/session/session_system.php';
 
+    if(isset($_POST['fechaDesde'])){ 
+        $fechaDesde = $_POST['fechaDesde'];
+    } else {
+        $fechaActual= date('Y-m-d');
+        $fechaDesde = date('Y-m-d', strtotime($fechaActual.'- 6 month'));
+    }
+
+    if(isset($_POST['fechaHasta'])){
+        $fechaHasta = $_POST['fechaHasta'];
+    } else {
+        $fechaHasta = date('Y-m-d');
+    }
+
     if(isset($_GET['code'])){
         $codeRest       = $_GET['code'];
         $msgRest        = $_GET['msg'];
+    } else {
+        $codeRest       = 0;
     }
 ?>
 
@@ -45,7 +60,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Listado</h4>
+                        <h4 class="page-title">Comprobantes</h4>
                         <div class="d-flex align-items-center"></div>
                     </div>
                     <div class="col-7 align-self-center">
@@ -78,40 +93,61 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                	<h4 class="col-10 card-title">Comprobantes</h4>
+                                    <h4 class="col-10 card-title">Listado</h4>
+                                    <h4 class="col-2 card-title" style="text-align: right;">
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-whatever="@fat"><i class="ti-filter"></i> Filtrar</button>
+                                	</h4>
 								</div>
                                 <div class="table-responsive">
-                                    <table id="tableLoad" class="table table-striped table-bordered">
+                                    <table id="tableLoad" class="table v-middle" style="width: 100%;">
                                         <thead id="tableCodigo" class="<?php echo $cli_01; ?>">
-                                            <tr>
-                                                <th>C&Oacute;DIGO</th>
-                                                <th>OPERACI&Oacute;N</th>
-                                                <th>FECHA OPERACI&Oacute;N</th>
-                                                <th>FECHA TRANSACCI&Oacute;N</th>
-                                                <th>TIPO COMPROBANTE</th>
-                                                <th>NRO. COMPROBANTE</th>
-                                                <th>IMPORTE COMPROBANTE</th>
-                                                <th style="width: 130px;">DESCARGAR</th>
+                                            <tr class="bg-light">
+                                                <th class="border-top-0">C&Oacute;DIGO</th>
+                                                <th class="border-top-0">OPERACI&Oacute;N</th>
+                                                <th class="border-top-0">CUOTA</th>
+                                                <th class="border-top-0">NRO. COMPROBANTE</th>
+                                                <th class="border-top-0">FECHA</th>
+                                                <th class="border-top-0">HORA</th>
+                                                <th class="border-top-0">IMPORTE</th>
+                                                <th class="border-top-0">COMPROBANTE</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>C&Oacute;DIGO</th>
-                                                <th>OPERACI&Oacute;N</th>
-                                                <th>FECHA OPERACI&Oacute;N</th>
-                                                <th>FECHA TRANSACCI&Oacute;N</th>
-                                                <th>TIPO COMPROBANTE</th>
-                                                <th>NRO. COMPROBANTE</th>
-                                                <th>IMPORTE COMPROBANTE</th>
-                                                <th style="width: 130px;">DESCARGAR</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- /.modal -->
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modalTitle">Rango de Fechas de Comprobantes</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="FormComprobante" action="../public/comprobante.php" method="post">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Fecha de Pago Desde:</label>
+                                        <input type="date" id="fechaDesde" name="fechaDesde" class="form-control" value="<?php echo $fechaDesde; ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Fecha de Pago Hasta:</label>
+                                        <input type="date" id="fechaHasta" name="fechaHasta" class="form-control" value="<?php echo $fechaHasta; ?>" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                        <input type="submit" formmethod="post" class="btn btn-primary" value="Ver">
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
