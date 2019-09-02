@@ -89,7 +89,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Comprobantes</h4>
+                        <h4 class="page-title">Bienvenido <?php echo $cli_02.' '.$cli_03; ?></h4>
                         <div class="d-flex align-items-center"></div>
                     </div>
                     <div class="col-7 align-self-center">
@@ -122,7 +122,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <h4 class="col-10 card-title">Listado</h4>
+                                    <h4 class="col-10 card-title">Comprobantes</h4>
                                     <h4 class="col-2 card-title" style="text-align: right;">
                                         <button type="button" style="background-color:#ce9d53; border-color:#ce9d53;" class="btn btn-info" data-toggle="modal" data-target="#modal" data-whatever="@fat"><i class="ti-filter"></i> Filtrar</button>
                                 	</h4>
@@ -164,8 +164,8 @@
                                         <label for="recipient-name" class="control-label">Operaciones con Estado:</label>
                                         <select class="custom-select mr-sm-2" id="estadoOpe" name="estadoOpe">
                                             <option value="1" <?php echo $selecTodos; ?>>Todos</option>
-                                            <option value="7" <?php echo $selecActivos; ?>>Activos</option>
-                                            <option value="10" <?php echo $selecCancelados; ?>>Cancelados</option>
+                                            <option value="7" <?php echo $selecActivos; ?>>Activas</option>
+                                            <option value="10" <?php echo $selecCancelados; ?>>Canceladas</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
