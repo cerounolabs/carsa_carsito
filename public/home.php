@@ -98,7 +98,14 @@
                                                 <h6 class="text-muted">(Cuotas Pagadas <?php echo $top03Value['operacion_cuota_cancelado'].' de '.$top03Value['operacion_cuota_cantidad']; ?>)</h6>
                                             </div>
                                             <div class="ml-auto">
-                                                <div id="predictionTop03<?php echo $top03Index; ?>" class="<?php echo number_format((($top03Value['operacion_cuota_cancelado'] * 100) / $top03Value['operacion_cuota_cantidad']), 0, ',', '.'); ?>"></div>
+                                                <h2 class="m-b-0">
+<?php
+    $fecha01 = date('d-m-Y');
+    $fecha02 = $top03Value['operacion_proximo_vencimiento'];
+    $fecha03 = $fecha01->diff($fecha02);
+    echo  $fecha03->days; 
+?>                                              </h2>
+                                                <!-- <div id="predictionTop03<?php //echo $top03Index; ?>" class="<?php //echo number_format((($top03Value['operacion_cuota_cancelado'] * 100) / $top03Value['operacion_cuota_cantidad']), 0, ',', '.'); ?>"></div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +125,7 @@
                                 <div class="row">
                                     <h4 class="col-10 card-title">&Uacute;ltimos 6 Pagos</h4>
                                     <h4 class="col-2 card-title" style="text-align: right;">
-                                		<a class="btn btn-info" href="../public/comprobante.php" role="button" title="Ver mas"><i class="ti-plus"></i> Ver mas</a>
+                                		<a class="btn btn-info" href="../public/comprobante.php" style="background-color:#ce9d53; border-color:#ce9d53;" role="button" title="Ver mas"><i class="ti-plus"></i> Ver mas</a>
                                 	</h4>
 								</div>
                                 <div class="table-responsive">

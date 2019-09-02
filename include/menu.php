@@ -85,7 +85,7 @@
                                 <span class="with-arrow">
                                     <span class="bg-primary"></span>
                                 </span>
-                                <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+                                <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10" style="background-color:#27464e !important;">
                                     <div class="">
                                         <img src="../assets/images/users/default.png" alt="user" class="img-circle" width="60">
                                     </div>
