@@ -37,6 +37,8 @@
         $codeRest       = $_GET['code'];
         $msgRest        = $_GET['msg'];
     }
+
+    echo $log_04;
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +85,7 @@
         <!-- ============================================================== -->
         <!-- Login box.scss -->
         <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(assets/images/background/auth-bg.jpg) no-repeat center center;">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(assets/images/background/fondo.png) no-repeat center center; background-size:cover;">
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
@@ -128,7 +130,7 @@
 
                                 <div class="form-group text-center">
                                     <div class="col-xs-12 p-b-20">
-                                        <button class="btn btn-block btn-lg btn-info" type="submit">INICIAR</button>
+                                        <button class="btn btn-block btn-lg btn-info" style="background-color:#ce9d53; border-color:#ce9d53;" type="submit">INICIAR</button>
                                     </div>
                                 </div>
                             </form>

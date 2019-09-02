@@ -12313,8 +12313,8 @@ Padding margin property
   min-height: 100vh;
   position: relative; }
   .auth-wrapper .auth-box {
-    background: #fff;
     background: #27464e;
+    background: #fff;
     padding: 20px;
     box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
     max-width: 400px;

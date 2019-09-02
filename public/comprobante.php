@@ -95,7 +95,7 @@
                                 <div class="row">
                                     <h4 class="col-10 card-title">Listado</h4>
                                     <h4 class="col-2 card-title" style="text-align: right;">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-whatever="@fat"><i class="ti-filter"></i> Filtrar</button>
+                                        <button type="button" style="background-color:#ce9d53; border-color:#ce9d53;" class="btn btn-info" data-toggle="modal" data-target="#modal" data-whatever="@fat"><i class="ti-filter"></i> Filtrar</button>
                                 	</h4>
 								</div>
                                 <div class="table-responsive">
@@ -124,8 +124,8 @@
                 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="modalTitle">Rango de Fechas de Comprobantes</h4>
+                            <div class="modal-header" style="background-color:#27464e;">
+                                <h4 class="modal-title" id="modalTitle" style="color:#fff;">Rango de Fechas de Comprobantes</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             </div>
                             <div class="modal-body">
@@ -139,8 +139,8 @@
                                         <input type="date" id="fechaHasta" name="fechaHasta" class="form-control" value="<?php echo $fechaHasta; ?>" required>
                                     </div>
                                     <div class="modal-footer">
+                                        <input type="submit" style="background-color:#ce9d53; border-color:#ce9d53;" formmethod="post" class="btn btn-primary" value="Ver">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        <input type="submit" formmethod="post" class="btn btn-primary" value="Ver">
                                     </div>
                                 </form>
                             </div>
