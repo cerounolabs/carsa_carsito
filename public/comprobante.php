@@ -140,7 +140,7 @@
                                                 <th class="border-top-0">FECHA</th>
                                                 <th class="border-top-0">HORA</th>
                                                 <th class="border-top-0">IMPORTE</th>
-                                                <th class="border-top-0">COMPROBANTE</th>
+                                                <th class="border-top-0">DESCARGAR</th>
                                             </tr>
                                         </thead>
                                     </table>
