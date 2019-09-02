@@ -37,7 +37,7 @@
     <link href="assets/libs/select2/dist/css/select2.min.css" type="text/css" rel="stylesheet">
     <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
 	<link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-	<link href="dist/css/style.min.css" rel="stylesheet">
+	<link href="dist/css/style.css" rel="stylesheet">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -69,8 +69,7 @@
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
-                        <span class="db"><img src="assets/images/logo-icon.png" alt="logo" /></span>
-                        <h5 class="font-medium m-b-20">CARSITO</h5>
+                        <span class="db"><img src="assets/images/logoCarsa.png" alt="logo" /></span>
                     </div>
                     <!-- Form -->
                     <div class="row">

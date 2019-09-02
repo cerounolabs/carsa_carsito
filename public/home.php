@@ -6,7 +6,11 @@
     if(isset($_GET['code'])){
         $codeRest       = $_GET['code'];
         $msgRest        = $_GET['msg'];
+    } else {
+        $codeRest       = 0;
     }
+
+    $top03JSON = get_curl('100/top03/'.$cli_01);
 ?>
 
 <!DOCTYPE html>
@@ -73,38 +77,64 @@
                 <!-- ============================================================== -->
                 <!-- basic table -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-sm-12 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                	<h4 class="col-10 card-title">&Uacute;ltimos Pagos</h4>
+                                	<h4 class="col-12 card-title">Proximos 3 Vencimientos</h4>
+                                </div>
+<?php
+    if ($top03JSON['code'] === 200) {
+        $top03Index = 0;
+        foreach ($top03JSON['data'] as $top03Key=>$top03Value) {
+            $top03Colors = array('card bg-light-success no-card-border', 'card bg-light-danger no-card-border', 'card bg-light-info no-card-border');
+?>
+                                <div class="<?php echo $top03Colors[$top03Index]; ?>">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="margin-bottom: 0px;"><span style="font-weight:bold;">Operaci&oacute;n:</span> <?php echo $top03Value['operacion_numero']; ?> | <span style="font-weight:bold;">Cuota Pendiente:</span> <?php echo $top03Value['operacion_proximo_cuota']; ?> | <span style="font-weight:bold;">Vence:</span> <?php echo $top03Value['operacion_proximo_vencimiento']; ?></h5>
+                                        <div class="d-flex no-block">
+                                            <div class="align-self-end no-shrink">
+                                                <h2 class="m-b-0">₲ <?php echo $top03Value['operacion_proximo_monto']; ?></h2>
+                                                <h6 class="text-muted">(Cuotas Pagadas <?php echo $top03Value['operacion_cuota_cancelado'].' de '.$top03Value['operacion_cuota_cantidad']; ?>)</h6>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <div id="predictionTop03<?php echo $top03Index; ?>" class="<?php echo number_format((($top03Value['operacion_cuota_cancelado'] * 100) / $top03Value['operacion_cuota_cantidad']), 0, ',', '.'); ?>"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<?php
+            $top03Index = $top03Index + 1;
+        }
+    }
+?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <h4 class="col-10 card-title">&Uacute;ltimos 6 Pagos</h4>
+                                    <h4 class="col-2 card-title" style="text-align: right;">
+                                		<a class="btn btn-info" href="../public/comprobante.php" role="button" title="Ver mas"><i class="ti-plus"></i> Ver mas</a>
+                                	</h4>
 								</div>
                                 <div class="table-responsive">
-                                    <table id="tableLoadTop10" class="table table-striped table-bordered">
-                                        <thead id="tableCodigoTop10" class="<?php echo $cli_01; ?>">
-                                            <tr>
-                                                <th>C&Oacute;DIGO</th>
-                                                <th>OPERACI&Oacute;N</th>
-                                                <th>NRO. COMPROBANTE</th>
-                                                <th>FECHA PAGO</th>
-                                                <th>HORA PAGO</th>
-                                                <th>IMPORTE COMPROBANTE</th>
-                                                <th>NRO. FACTURA</th>
-                                                <th>NRO. RECIBO</th>
+                                    <table id="tableLoadTop06" class="table v-middle" style="width: 100%;">
+                                        <thead id="tableCodigoTop06" class="<?php echo $cli_01; ?>">
+                                            <tr class="bg-light">
+                                                <th class="border-top-0">C&Oacute;DIGO</th>
+                                                <th class="border-top-0">OPERACI&Oacute;N</th>
+                                                <th class="border-top-0">CUOTA</th>
+                                                <th class="border-top-0">NRO. COMPROBANTE</th>
+                                                <th class="border-top-0">FECHA</th>
+                                                <th class="border-top-0">HORA</th>
+                                                <th class="border-top-0">IMPORTE</th>
+                                                <th class="border-top-0">COMPROBANTE</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>C&Oacute;DIGO</th>
-                                                <th>OPERACI&Oacute;N</th>
-                                                <th>NRO. COMPROBANTE</th>
-                                                <th>FECHA PAGO</th>
-                                                <th>HORA PAGO</th>
-                                                <th>IMPORTE COMPROBANTE</th>
-                                                <th>NRO. FACTURA</th>
-                                                <th>NRO. RECIBO</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
@@ -152,6 +182,7 @@
     }
 ?>
 
-    <script src="../js/home_top10.js"></script>
+    <script src="../js/home_top03.js"></script>
+    <script src="../js/home_top06.js"></script>
 </body>
 </html>
