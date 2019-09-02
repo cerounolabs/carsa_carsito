@@ -36,6 +36,8 @@
     if(isset($_GET['code'])){
         $codeRest       = $_GET['code'];
         $msgRest        = $_GET['msg'];
+    } else {
+        $codeRest       = 0;
     }
 
     echo $log_04;
