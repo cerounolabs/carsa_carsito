@@ -22,17 +22,19 @@ $(document).ready(function() {
 		columnDefs	: [
 			{ targets			: [0], visible : false, searchable : false, orderData : [0, 0] },
 			{ targets			: [1], visible : true,  searchable : true,  orderData : [1, 0] },
-			{ targets			: [2], visible : true,  searchable : true,  orderData : [2, 0] },
+			{ targets			: [2], visible : false, searchable : false, orderData : [2, 0] },
 			{ targets			: [3], visible : true,  searchable : true,  orderData : [3, 0] },
-			{ targets			: [4], visible : false, searchable : false, orderData : [4, 0] },
-			{ targets			: [5], visible : true,  searchable : true,  orderData : [5, 0] },
-			{ targets			: [6], visible : false, searchable : false, orderData : [6, 0] },
-			{ targets			: [7], visible : true,  searchable : true,  orderData : [7, 0] },
-			{ targets			: [8], visible : true,  searchable : true,  orderData : [8, 0] }
+			{ targets			: [4], visible : true,  searchable : true,  orderData : [4, 0] },
+			{ targets			: [5], visible : false, searchable : false, orderData : [5, 0] },
+			{ targets			: [6], visible : true,  searchable : true,  orderData : [6, 0] },
+			{ targets			: [7], visible : false, searchable : false, orderData : [7, 0] },
+			{ targets			: [8], visible : true,  searchable : true,  orderData : [8, 0] },
+			{ targets			: [9], visible : true,  searchable : true,  orderData : [9, 0] }
 		],
 		columns		: [
 			{ data				: 'caja_cuenta', name : 'caja_cuenta'},
 			{ data				: 'caja_operacion', name : 'caja_operacion'},
+			{ data				: 'caja_banca', name : 'caja_banca'},
 			{ data				: 'caja_movimiento', name : 'caja_movimiento'},
 			{ data				: 'caja_cuota', name : 'caja_cuota'},
 			{ data				: 'caja_numero_movimiento', name : 'caja_numero_movimiento'},

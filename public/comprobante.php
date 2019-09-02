@@ -3,6 +3,12 @@
     require '../class/function/function.php';
     require '../class/session/session_system.php';
 
+    if(isset($_POST['estadoOpe'])){ 
+        $estadoOpe  = $_POST['estadoOpe'];
+    } else {
+        $estadoOpe  = 1;
+    }
+
     if(isset($_POST['fechaDesde'])){ 
         $fechaDesde = $_POST['fechaDesde'];
     } else {
@@ -104,6 +110,7 @@
                                             <tr class="bg-light">
                                                 <th class="border-top-0">C&Oacute;DIGO</th>
                                                 <th class="border-top-0">OPERACI&Oacute;N</th>
+                                                <th class="border-top-0">BANCA</th>
                                                 <th class="border-top-0">MOVIMIENTO</th>
                                                 <th class="border-top-0">CUOTA</th>
                                                 <th class="border-top-0">NRO. COMPROBANTE</th>
@@ -130,6 +137,14 @@
                             </div>
                             <div class="modal-body">
                                 <form id="FormComprobante" action="../public/comprobante.php" method="post">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="control-label">Operaciones con Estado:</label>
+                                        <select class="custom-select mr-sm-2" id="estadoOpe" name="estadoOpe">
+                                            <option value="1">Todos</option>
+                                            <option value="7">Activos</option>
+                                            <option value="10">Cancelados</option>
+                                        </select>
+                                    </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="control-label">Fecha de Pago Desde:</label>
                                         <input type="date" id="fechaDesde" name="fechaDesde" class="form-control" value="<?php echo $fechaDesde; ?>" required>
