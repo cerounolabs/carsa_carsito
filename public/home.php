@@ -85,41 +85,48 @@
                                 </div>
 <?php
     if ($top03JSON['code'] === 200) {
-        $top03Index = 0;
         foreach ($top03JSON['data'] as $top03Key=>$top03Value) {
-            $top03Colors = array('card bg-light-success no-card-border', 'card bg-light-danger no-card-border', 'card bg-light-info no-card-border');
+            $fecha01    = str_replace('/', '-', $top03Value['operacion_proximo_vencimiento']);
+            $fecha01    = new DateTime($fecha01);
+            $fecha02    = new DateTime('now');
+            $fecha03    = $fecha01->diff($fecha02);
+            $fecha03    = $fecha03->days;
+
+            if($fecha03 > 0 && $fecha01 > $fecha02 ){
 ?>
-                                <div class="<?php echo $top03Colors[$top03Index]; ?>">
+                                <div class="card bg-light-success no-card-border">
                                     <div class="card-body">
-                                        <h5 class="card-title"><span style="font-weight:bold;">Operaci&oacute;n:</span> <?php echo $top03Value['operacion_numero']; ?> | <span style="font-weight:bold;">Cuota Pendiente:</span> <?php echo $top03Value['operacion_proximo_cuota']; ?> | <span style="font-weight:bold;">Vence:</span> <?php echo $top03Value['operacion_proximo_vencimiento']; ?></h5>
+                                        <h5 class="card-title"><span style="font-weight:bold;">Operaci&oacute;n:</span> <?php echo number_format($top03Value['operacion_numero'], 0, ',', '.'); ?> | <span style="font-weight:bold;">Vence el:</span> <?php echo $top03Value['operacion_proximo_vencimiento']; ?></h5>
                                         <div class="d-flex no-block">
                                             <div class="align-self-end no-shrink">
-                                                <h2 class="m-b-0">₲ <?php echo $top03Value['operacion_proximo_monto']; ?></h2>
+                                                <h2 class="m-b-0">₲ <?php echo number_format($top03Value['operacion_proximo_monto'], 0, ',', '.'); ?></h2>
                                                 <h6 class="text-muted">(Cuota Nro <?php echo $top03Value['operacion_proximo_cuota'].' de '.$top03Value['operacion_cuota_cantidad']; ?>)</h6>
                                             </div>
                                             <div class="ml-auto">
-                                                <h2 class="m-b-0">
-<?php
-    $fecha01 = str_replace('/', '-', $top03Value['operacion_proximo_vencimiento']);
-    $fecha01 = new DateTime($fecha01);
-    $fecha02 = new DateTime('now');
-    $fecha03 = $fecha01->diff($fecha02);
-    $fecha03 = $fecha03->days;
-
-    if($fecha03 > 0 && $fecha01 > $fecha02 ){
-        echo 'Vence dentro '.$fecha03.' días'; 
-    } else {
-        echo 'Vencio hace '.$fecha03.' días'; 
-    }
-    
-?>                                              </h2>
-                                                <!-- <div id="predictionTop03<?php //echo $top03Index; ?>" class="<?php //echo number_format((($top03Value['operacion_cuota_cancelado'] * 100) / $top03Value['operacion_cuota_cantidad']), 0, ',', '.'); ?>"></div>-->
+                                                <h2 class="m-b-0"><?php echo 'Vence dentro '.$fecha03.' días'; ?></h2>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 <?php
-            $top03Index = $top03Index + 1;
+            } else {
+?>
+                                  <div class="card bg-light-danger no-card-border">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><span style="font-weight:bold;">Operaci&oacute;n:</span> <?php echo number_format($top03Value['operacion_numero'], 0, ',', '.'); ?> | <span style="font-weight:bold;">Venció el:</span> <?php echo $top03Value['operacion_proximo_vencimiento']; ?></h5>
+                                        <div class="d-flex no-block">
+                                            <div class="align-self-end no-shrink">
+                                                <h2 class="m-b-0">₲ <?php echo number_format($top03Value['operacion_proximo_monto'], 0, ',', '.'); ?></h2>
+                                                <h6 class="text-muted">(Cuota Nro <?php echo $top03Value['operacion_proximo_cuota'].' de '.$top03Value['operacion_cuota_cantidad']; ?>)</h6>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <h2 class="m-b-0"><?php echo 'Venció hace '.$fecha03.' días'; ?></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<?php 
+            }
         }
     }
 ?>
