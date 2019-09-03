@@ -72,7 +72,7 @@ $(document).ready(function() {
 			{ data				: 'caja_fecha', name : 'caja_fecha'},
 			{ data				: 'caja_hora', name : 'caja_hora'},
 			{ data				: 'caja_monto', name : 'caja_monto', render: $.fn.dataTable.render.number('.', ',', 0, '')},
-			{ render			: function (data, type, full, meta) {return '<a href="../report/comprobante.php?id1=' + full.comprobante_codigo + '" role="button" class="btn btn-success"><i class="ti-printer"></i>&nbsp;</a>';}},
+			{ render			: function (data, type, full, meta) {return '<a href="../report/comprobante.php?id1=' + full.caja_numero_movimiento + '" role="button" class="btn btn-success"><i class="ti-printer"></i>&nbsp;</a>';}},
 		]
 	});
 });
