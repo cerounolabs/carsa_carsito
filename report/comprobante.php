@@ -14,6 +14,7 @@
         $resultJSON = get_curl('report/100/'.$idComprobante);
 
         if ($resultJSON['code'] == 200){
+            $row_00     = 'a';
 			$row_01     = $resultJSON['data'][0]['caja_cuenta'];
 			$row_02     = $resultJSON['data'][0]['caja_operacion'];
 			$row_03     = $resultJSON['data'][0]['caja_movimiento'];
@@ -61,55 +62,113 @@
 
         $mpdf -> WriteHTML('<br>');
 
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> Ruc: 80026235-2 TEL: 021 238-8800 </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> Matriz - Oliva Nº 408 Esq. Alberdi </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> Suc. Gral. Diaz esq. 14 de Mayo Nº 563 </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Ruc: 80026235-2 TEL: 021 238-8800 </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Matriz - Oliva Nº 408 Esq. Alberdi </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Suc. Gral. Diaz esq. 14 de Mayo Nº 563 </p>');
         $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> Asunción - Paraguay </p>');
         $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> --------------------------------------------------- </p>');
         
-        if ($row_03 == 'DESEMBOLSO') {
-            $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> Comprobante de Desembolso </p>');
-        } else {
-            $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> Recido de Dinero </p>');
-        }
-        
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Mov. Nº.: '.$row_08.'</p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Recibo Nº.: '.$row_10.'</p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Fecha: '.$row_05.'  Hora: '.$row_06.' </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Cajero: '.$row_11.'</p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Cuenta Nº.: '.$row_01.' </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nombre o Razón Social: </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> '.$row_13.' </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nº Doc.: '.$row_15.'</p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Dirección: '.$row_16.' </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Tel.: '.$row_17.' | '.$row_18.' </p>');
-        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Operación: '.$row_02.' </p>');
-
-        if ($row_03 == 'DESEMBOLSO') {
-            
-        } else {
-            $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Cuota: '.$row_04.' de '.$row_12.' </p>');
-        }
-
-        
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Timbrado Nº: '.$row_00.' </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Válido Hasta: '.$row_00.' </p>');
 
         $mpdf -> WriteHTML('<br>');
-/*
+
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> FACTURA </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Condición de Venta: '.$row_00.' </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Factura Nº: '.$row_00.' </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Mov. Nº: '.$row_00.' Cajero: '.$row_00.' </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Fecha y Hora: '.$row_00.' '.$row_00.' </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nombre o Razón Social: </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> '.$row_00.' </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> C.I. Nº / R.U.C. Nº: '.$row_00.'</p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nº de Cuenta: '.$row_00.' </p>');
+        $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nº de Operación: '.$row_00.' </p>');
+
+        $mpdf -> WriteHTML('<br>');
+        
         $mpdf -> WriteHTML('<table  width="100%">');
         $mpdf -> WriteHTML('<thead>');
         $mpdf -> WriteHTML('<tr>');
-        $mpdf -> WriteHTML('<th width="50%" style="text-align:left;"> Concepto </th>');
-        $mpdf -> WriteHTML('<th width="50%" style="text-align:right;"> Monto </th>');
+        $mpdf -> WriteHTML('<th width="40%" style="text-align:left;"> Concepto </th>');
+        $mpdf -> WriteHTML('<th width="40%" style="text-align:right;"> Monto </th>');
+        $mpdf -> WriteHTML('<th width="20%" style="text-align:right;"> Imp </th>');
         $mpdf -> WriteHTML('</tr>');
         $mpdf -> WriteHTML('</thead>');
-        $mpdf -> WriteHTML('<tfoot>');
+        $mpdf -> WriteHTML('<tbody>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> Capital: </td>');
+        $mpdf -> WriteHTML('<td width="40%" style="text-align:right;"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+        $mpdf -> WriteHTML('<td width="20%" style="text-align:right;">  </td>');
         $mpdf -> WriteHTML('</tr>');
-        $mpdf -> WriteHTML('<td width="50%" style="text-align:left;"> Total GS. </td>');
-        $mpdf -> WriteHTML('<td width="50%" style="text-align:right;"> 900.910,00 </td>');
+
+            //DESEMBOLSO
+            $mpdf -> WriteHTML('<tr>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> Interés: </td>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:right;"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+            $mpdf -> WriteHTML('<td width="20%" style="text-align:right;"> 10% </td>');
+            $mpdf -> WriteHTML('</tr>');
+            $mpdf -> WriteHTML('<tr>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> Gas. Adm.: </td>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:right;"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+            $mpdf -> WriteHTML('<td width="20%" style="text-align:right;"> 10% </td>');
+            $mpdf -> WriteHTML('</tr>');
+            $mpdf -> WriteHTML('<tr>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> Club de Benef.: </td>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:right;"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+            $mpdf -> WriteHTML('<td width="20%" style="text-align:right;"> 10% </td>');
+            $mpdf -> WriteHTML('</tr>');
+            $mpdf -> WriteHTML('<tr>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> Comisión s/ </td>');
+            $mpdf -> WriteHTML('<td width="40%" style="text-align:right;"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+            $mpdf -> WriteHTML('<td width="20%" style="text-align:right;"> 10% </td>');
+            $mpdf -> WriteHTML('</tr>');
+            $mpdf -> WriteHTML('<tr>');
+            $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> interés complementario </td>');
+            $mpdf -> WriteHTML('</tr>');
+
+        
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> <p style="margin:0px; text-align:center;"> ------------------------------------------------- </p> </td>');
         $mpdf -> WriteHTML('</tr>');
-        $mpdf -> WriteHTML('</tfoot>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;"> Total: </td>');
+        $mpdf -> WriteHTML('<td style="text-align:right;" colspan="2"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+        $mpdf -> WriteHTML('</tr>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> <p style="margin:0px; text-align:center;"> ------------------------------------------------- </p> </td>');
+        $mpdf -> WriteHTML('</tr>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> Son Guaraníes: ('.$row_00.')- </td>');
+        $mpdf -> WriteHTML('</tr>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> <p style="margin:0px; text-align:center;"> ------------------------------------------------- </p> </td>');
+        $mpdf -> WriteHTML('</tr>');
+
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> Liquidación de I.V.A.: </td>');
+        $mpdf -> WriteHTML('</tr>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> I.V.A. 5% </td>');
+        $mpdf -> WriteHTML('<td style="text-align:right;" colspan="2"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+        $mpdf -> WriteHTML('</tr>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> I.V.A. 10% </td>');
+        $mpdf -> WriteHTML('<td style="text-align:right;" colspan="2"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+        $mpdf -> WriteHTML('</tr>');
+
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> <br> </td>');
+        $mpdf -> WriteHTML('</tr>');
+
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td style="text-align:left;" colspan="3"> Forma de Cobro </td>');
+        $mpdf -> WriteHTML('</tr>');
+        $mpdf -> WriteHTML('<tr>');
+        $mpdf -> WriteHTML('<td width="40%" style="text-align:left;"> Efectivo </td>');
+        $mpdf -> WriteHTML('<td style="text-align:right;" colspan="2"> GS. '.number_format($row_00, 0, ','. '.').' </td>');
+        $mpdf -> WriteHTML('</tbody>');
         $mpdf -> WriteHTML('</table>');
-*/
+
         $mpdf -> WriteHTML('</body>');
 
         $mpdf -> Output('CARSITOComprobante_'.$fechaHora.'.pdf', 'I');
