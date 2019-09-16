@@ -148,14 +148,15 @@
                                         <thead id="tableCodigoTop06" class="<?php echo $cli_01; ?>">
                                             <tr class="bg-light">
                                                 <th class="border-top-0">C&Oacute;DIGO</th>
-                                                <th class="border-top-0">OPERACI&Oacute;N</th>
-                                                <th class="border-top-0">BANCA</th>
                                                 <th class="border-top-0">MOVIMIENTO</th>
+                                                <th class="border-top-0">OPERACI&Oacute;N</th>
                                                 <th class="border-top-0">CUOTA</th>
+                                                <th class="border-top-0">BANCA</th>
+                                                <th class="border-top-0">TIPO COMPROBANTE</th>
                                                 <th class="border-top-0">NRO. COMPROBANTE</th>
-                                                <th class="border-top-0">FECHA</th>
-                                                <th class="border-top-0">HORA</th>
-                                                <th class="border-top-0">IMPORTE</th>
+                                                <th class="border-top-0">FECHA COMPROBANTE</th>
+                                                <th class="border-top-0">HORA COMPROBANTE</th>
+                                                <th class="border-top-0">IMPORTE COMPROBANTE</th>
                                                 <th class="border-top-0">DESCARGAR</th>
                                             </tr>
                                         </thead>
