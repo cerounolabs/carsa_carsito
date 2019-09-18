@@ -19,9 +19,9 @@
     $mail->AltBody 		= $_POST['email-content'];
 
     if(!$mail->Send()) {
-    echo "Message could not be sent. <p>";
-    echo "Mailer Error: " . $mail->ErrorInfo;
-    exit;
+        echo "Message could not be sent. <p>";
+        echo "Mailer Error: " . $mail->ErrorInfo;
+        exit;
     } else {
         header("Location: contact.php");
     }
