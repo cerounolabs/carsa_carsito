@@ -82,7 +82,7 @@
         $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> Asunción - Paraguay </p>');
         $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> --------------------------------------------------- </p>');
         
-        if ($row_25_cabecera == 'FACTURA') {
+        if ($row_26_cabecera == 'FACTURA') {
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Timbrado Nº: '.$row_02_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Válido Hasta: '.$row_03_cabecera.' </p>');
 
