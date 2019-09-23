@@ -157,6 +157,7 @@
                                                 <th class="border-top-0">FECHA COMPROBANTE</th>
                                                 <th class="border-top-0">HORA COMPROBANTE</th>
                                                 <th class="border-top-0">IMPORTE COMPROBANTE</th>
+                                                <th class="border-top-0">MOTIVO REVERSI&Oacute;N</th>
                                                 <th class="border-top-0">DESCARGAR</th>
                                             </tr>
                                         </thead>
