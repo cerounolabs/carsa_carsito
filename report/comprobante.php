@@ -12,6 +12,7 @@
 
     if ($idComprobante <> 0){
         $resultJSON = get_curl('report/100/cabecera/'.$idComprobante);
+        $canCompJSON= put_curl('200/cantidad/'.$idComprobante);
 
         if ($resultJSON['code'] == 200){
             $row_00_cabecera    = $resultJSON['data'][0]['comprobante_codigo'];
@@ -62,6 +63,12 @@
             'mirrorMargins' => true
         ]);
 
+        $subTitulo  = '';
+
+        if ($row_05_cabecera > 1) {
+            $subTitulo = '(RE-IMPRESO)'
+        }
+
         $mpdf -> SetTitle('C.A.R.S.A. | CARSITO');
 
         $mpdf -> WriteHTML('<body>');
@@ -88,7 +95,7 @@
 
             $mpdf -> WriteHTML('<br>');
 
-            $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> FACTURA </p>');
+            $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> FACTURA '.$subTitulo.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Condición de Venta: '.$row_28_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Factura Nº: '.$row_04_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Mov. Nº: '.$row_08_cabecera.' Cajero: '.$row_10_cabecera.' </p>');
@@ -99,7 +106,7 @@
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nº de Cuenta: '.$row_20_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nº de Operación: '.$row_16_cabecera.' </p>');
         } else {
-            $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> RECIBO DE DINERO </p>');
+            $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> RECIBO DE DINERO '.$subTitulo.'</p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Mov. Nº: '.$row_08_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Recibo Nº: '.$row_04_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Fecha: '.$row_12_cabecera.' Hora: '.$row_14_cabecera.' </p>');
