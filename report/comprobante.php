@@ -11,8 +11,13 @@
     }
 
     if ($idComprobante <> 0){
-        $resultJSON = get_curl('report/100/cabecera/'.$idComprobante);
-        $canCompJSON= put_curl('200/cantidad/'.$idComprobante);
+        $dataJSON       = json_encode(
+            array(
+                'usuario_var01' => ''
+            ));
+
+        $resultJSON = get_curl('report/100/cabecera/'.$idComprobante); 
+        $canCompJSON= put_curl('200/cantidad/'.$idComprobante, $dataJSON);
 
         if ($resultJSON['code'] == 200){
             $row_00_cabecera    = $resultJSON['data'][0]['comprobante_codigo'];
@@ -66,7 +71,7 @@
         $subTitulo  = '';
 
         if ($row_05_cabecera > 1) {
-            $subTitulo = '(RE-IMPRESO)'
+            $subTitulo = '(RE-IMPRESO)';
         }
 
         $mpdf -> SetTitle('C.A.R.S.A. | CARSITO');
