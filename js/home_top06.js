@@ -30,7 +30,8 @@ $(document).ready(function() {
 			{ targets			: [7],	visible : true,	searchable : true,	orderData : [7, 0] },
 			{ targets			: [8],	visible : false,searchable : false,	orderData : [8, 0] },
 			{ targets			: [9],	visible : true,	searchable : true,	orderData : [9, 0] },
-			{ targets			: [10],	visible : true,	searchable : true,	orderData : [10, 0] }
+			{ targets			: [10],	visible : false,searchable : false,	orderData : [10, 0] },
+			{ targets			: [11],	visible : true,	searchable : true,	orderData : [11, 0] }
 		],
 		columns		: [
 			{ data				: 'persona_cuenta', name : 'persona_cuenta'},
@@ -43,6 +44,7 @@ $(document).ready(function() {
 			{ data				: 'movimiento_fecha_original', name : 'movimiento_fecha_original'},
 			{ data				: 'movimiento_hora_original', name : 'movimiento_hora_original'},
 			{ data				: 'comprobante_importe_numero', name : 'comprobante_importe_numero', render: $.fn.dataTable.render.number('.', ',', 0, '')},
+			{ data				: 'reversion_nombre', name : 'reversion_nombre'},
 			{ render			: function (data, type, full, meta) {return '<a href="../report/comprobante.php?id1=' + full.comprobante_codigo + '" role="button" class="btn btn-success"><i class="ti-printer"></i>&nbsp;</a>';}},
 		]
 	});
