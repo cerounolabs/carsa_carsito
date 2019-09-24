@@ -11,6 +11,8 @@
     unset($_SESSION['cli_01']);
     unset($_SESSION['cli_02']);
     unset($_SESSION['cli_03']);
+
+    unset($_SESSION['expire']);
     
     session_unset();
     session_destroy();

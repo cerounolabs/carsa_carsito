@@ -25,7 +25,7 @@
         if (isset($log_05) && isset($log_06) && isset($cli_01)) {
             setlocale(LC_MONETARY, 'es_PY');
 
-            $_SESSION['expire'] = time() + 3600;
+            $_SESSION['expire'] = time() + 600;
 
             $urlAct             = $_SERVER['REQUEST_URI'];
             $urlAnt             = substr($_SERVER['HTTP_REFERER'], 39);

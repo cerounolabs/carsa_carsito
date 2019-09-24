@@ -21,7 +21,7 @@
             $_SESSION['cli_02']     = $resultJSON['data'][0]['cliente_nombre'];
             $_SESSION['cli_03']     = $resultJSON['data'][0]['cliente_apellido'];
             $_SESSION['cli_04']     = $resultJSON['data'][0]['cliente_fecha_nacimiento'];
-            $_SESSION['expire']     = time() + 3600;
+            $_SESSION['expire']     = time() + 600;
             
             header('Location: ../../public/home.php');
         } else {
