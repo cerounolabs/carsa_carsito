@@ -45,7 +45,7 @@ $(document).ready(function() {
 			{ data				: 'movimiento_hora_original', name : 'movimiento_hora_original'},
 			{ data				: 'comprobante_importe_numero', name : 'comprobante_importe_numero', render: $.fn.dataTable.render.number('.', ',', 0, '')},
 			{ data				: 'reversion_nombre', name : 'reversion_nombre'},
-			{ render			: function (data, type, full, meta) {return '<a href="../report/comprobante.php?id1=' + full.comprobante_codigo + '" role="button" class="btn btn-success"><i class="ti-printer"></i>&nbsp;</a>';}},
+			{ render			: function (data, type, full, meta) {return '<a href="../report/comprobante.php?id1=' + full.comprobante_codigo + '" role="button" class="btn btn-success" target="_blank"><i class="ti-printer"></i>&nbsp;</a>';}},
 		]
 	});
 });

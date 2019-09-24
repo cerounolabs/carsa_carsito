@@ -53,6 +53,8 @@
             $row_30_cabecera    = $resultJSON['data'][0]['pago_nombre'];
             $row_31_cabecera    = $resultJSON['data'][0]['banca_codigo'];
             $row_32_cabecera    = $resultJSON['data'][0]['banca_nombre'];
+            $row_33_cabecera    = $resultJSON['data'][0]['reversion_codigo'];
+            $row_34_cabecera    = $resultJSON['data'][0]['reversion_nombre'];
         }
 
         $mpdf = new \Mpdf\Mpdf([
@@ -101,6 +103,11 @@
             $mpdf -> WriteHTML('<br>');
 
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> FACTURA '.$subTitulo.' </p>');
+
+            if (isset($row_33_cabecera)){
+                $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> ANULADO POR '.$row_34_cabecera.' </p>');
+            }
+
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Condición de Venta: '.$row_28_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Factura Nº: '.$row_04_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Mov. Nº: '.$row_08_cabecera.' Cajero: '.$row_10_cabecera.' </p>');
@@ -112,6 +119,11 @@
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Nº de Operación: '.$row_16_cabecera.' </p>');
         } else {
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> RECIBO DE DINERO '.$subTitulo.'</p>');
+
+            if (isset($row_33_cabecera)){
+                $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> ANULADO POR '.$row_34_cabecera.' </p>');
+            }
+
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Mov. Nº: '.$row_08_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Recibo Nº: '.$row_04_cabecera.' </p>');
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Fecha: '.$row_12_cabecera.' Hora: '.$row_14_cabecera.' </p>');
@@ -218,6 +230,12 @@
         $mpdf -> WriteHTML('<td style="text-align:right;" colspan="2"> GS. '.$row_06_cabecera.' </td>');
         $mpdf -> WriteHTML('</tbody>');
         $mpdf -> WriteHTML('</table>');
+
+        $mpdf -> WriteHTML('<br>');
+        $mpdf -> WriteHTML('<br>');
+        $mpdf -> WriteHTML('<br>');
+        $mpdf -> WriteHTML('IMPRESO DESDE LA WEB www.mifactura.carsa.com.py');
+        $mpdf -> WriteHTML('Fecha: '.date('d/m/Y').' - Hora: '.date('H:i:s'));
 
         $mpdf -> WriteHTML('</body>');
 
