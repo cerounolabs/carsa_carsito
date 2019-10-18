@@ -52,7 +52,7 @@
     <script src="../assets/libs/morris.js/morris.min.js"></script>
 
     <!-- Chart JS -->
-    <script src="../assets/libs/Chart.js/dist/Chart.min.js"></script>
+    <script src="../assets/libs/chart.js/dist/Chart.min.js"></script>
     
     <!--select2 -->
     <script src="../assets/libs/select2/dist/js/select2.full.min.js"></script>
