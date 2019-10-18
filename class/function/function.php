@@ -1,4 +1,8 @@
 <?php
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception; 
+    
     function mssqlConectar($var00) {
         switch ($var00) {
             case 'P'://PRODUCCION
@@ -50,5 +54,36 @@
     function getCodeLogin(){
         $result = random_int(1000, 9999);
         return $result;
+    }
+
+    function setEmail($var01, $var02){
+        require '../../vendor/autoload.php';
+
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
+            $mail->isSMTP();
+            $mail->Host         = 'mail.carsa.com.py';
+            $mail->SMTPAuth     = true;
+            $mail->Username     = 'test@carsa.com.py';
+            $mail->Password     = 'Argentina_1978';
+            $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port         = 587;
+        
+            $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
+            $mail->addAddress('zelaya26@gmail.com');
+            $mail->addReplyTo('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
+        
+            $mail->isHTML(true);
+            $mail->Subject      = 'Here is the subject';
+            $mail->Body         = 'This is the HTML message body <b>in bold!</b>';
+            $mail->AltBody      = 'This is the body in plain text for non-HTML mail clients';
+        
+            $mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
     }
 ?>
