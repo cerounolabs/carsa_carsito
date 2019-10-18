@@ -64,7 +64,7 @@
         try {
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
-            $mail->Host         = 'mail.carsa.com.py';
+            $mail->Host         = '192.168.16.85';
             $mail->SMTPAuth     = true;
             $mail->Username     = 'test@carsa.com.py';
             $mail->Password     = 'Argentina_1978';
