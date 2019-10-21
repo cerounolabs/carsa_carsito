@@ -64,7 +64,7 @@
         try {
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
-            $mail->Host         = '192.168.16.85';
+            $mail->Host         = 'webmail.it.com.py';
             $mail->SMTPAuth     = true;
             $mail->Username     = 'czelaya@it.com.py';
             $mail->Password     = 'fxiw~M3Lg%Qp';
