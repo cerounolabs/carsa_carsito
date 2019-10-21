@@ -66,15 +66,24 @@
             $mail->isSMTP();
             $mail->Host         = '192.168.16.85';
             $mail->SMTPAuth     = true;
+            $mail->Username     = 'czelaya@it.com.py';
+            $mail->Password     = 'fxiw~M3Lg%Qp';
+/*
             $mail->Username     = 'test@carsa.com.py';
             $mail->Password     = 'Argentina_1979';
+*/
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port         = 587;
-        
+        /*
             $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('zelaya26@gmail.com');
             $mail->addReplyTo('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
-        
+        */
+
+            $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
+            $mail->addAddress('zelaya26@gmail.com');
+            $mail->addReplyTo('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
+
             $mail->isHTML(true);
             $mail->Subject      = 'Here is the subject';
             $mail->Body         = 'This is the HTML message body <b>in bold!</b>';
