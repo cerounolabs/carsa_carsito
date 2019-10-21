@@ -67,7 +67,7 @@
             $mail->Host         = '192.168.16.85';
             $mail->SMTPAuth     = true;
             $mail->Username     = 'test@carsa.com.py';
-            $mail->Password     = 'Argentina_1978';
+            $mail->Password     = 'Argentina_1979';
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port         = 587;
         
