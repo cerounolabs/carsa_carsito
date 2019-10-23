@@ -2,6 +2,8 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception; 
+
+    require '../../vendor/autoload.php';
     
     function mssqlConectar($var00) {
         switch ($var00) {
@@ -57,22 +59,19 @@
     }
 
     function setEmail($var01, $var02){
-        require '../../vendor/autoload.php';
-
         $mail = new PHPMailer(true);
 
         try {
-//            $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
+            $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
             $mail->Host         = 'smtp.it.com.py';
             $mail->SMTPAuth     = true;
             $mail->Username     = 'czelaya@it.com.py';
             $mail->Password     = 'fxiw~M3Lg%Qp';
-
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port         = 587;
 
-            $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
+            $mail->setFrom('contactos@it.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
 
             $mail->isHTML(true);
