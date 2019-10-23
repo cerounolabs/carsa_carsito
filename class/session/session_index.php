@@ -36,7 +36,7 @@
         $_SESSION['log_04'] 	= $val_04;
         $_SESSION['log_05'] 	= $val_05;
         $_SESSION['log_06'] 	= $val_06;
-        $_SESSION['expire']     = time() + 600;
+        $_SESSION['expire']     = time() + 3600;
         
         setEmail($val_03, $val_04);
 
