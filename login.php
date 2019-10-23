@@ -37,7 +37,9 @@
         $codeRest       = $_GET['code'];
         $msgRest        = $_GET['msg'];
     } else {
-        $codeRest       = 0;
+        $codeRest       = 200;
+        $msgRest        = 'Favor verificar su correo '.$log_03.' para ver el PIN';
+
     }
 ?>
 
