@@ -50,8 +50,8 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="CEROUN Labs">
+	<meta name="description" content="C.A.R.S.A. Sistema Comprobante Web">
+	<meta name="author" content="CEROUN Labs https://cerouno.com.py/ - +595 984 779436">
 	<link href="assets/images/favicon.png" rel="icon" type="image/png" sizes="16x16">
 	<link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
 	<link href="assets/libs/morris.js/morris.css" rel="stylesheet">
@@ -67,7 +67,7 @@
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></scri
 	<![endif]-->
 	
-	<title>C.A.R.S.A. | CARSITO</title>
+	<title>C.A.R.S.A. | MI FACTURA</title>
 </head>
 
 <body>
