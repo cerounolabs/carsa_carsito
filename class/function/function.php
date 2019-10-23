@@ -64,14 +64,14 @@
         try {
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
-            $mail->Host         = '192.185.195.43';
-//            $mail->SMTPAuth     = true;
-            $mail->Username     = 'czelaya@it.com.py';
-            $mail->Password     = 'fxiw~M3Lg%Qp';
+            $mail->Host         = '192.168.16.85';
+            $mail->SMTPAuth     = true;
+            $mail->Username     = 'test@carsa.com.py';
+            $mail->Password     = 'Argentina_1979';
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port         = 587;
 
-            $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
+            $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
 
             $mail->isHTML(true);
