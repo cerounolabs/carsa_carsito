@@ -62,7 +62,7 @@
         $mail = new PHPMailer(true);
 
         try {
-            $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
+            $mail->SMTPDebug    = 1;
             $mail->isSMTP();
             $mail->Host         = '192.168.16.85';
             $mail->SMTPAuth     = true;
