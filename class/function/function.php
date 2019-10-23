@@ -75,15 +75,18 @@
 
             $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('zelaya26@gmail.com');
-            $mail->addReplyTo('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
 
             $mail->isHTML(true);
             $mail->Subject      = 'Here is the subject';
             $mail->Body         = 'This is the HTML message body <b>in bold!</b>';
             $mail->AltBody      = 'This is the body in plain text for non-HTML mail clients';
         
-            $mail->send();
-            echo 'Message has been sent';
+            if(!$mail->Send()) {
+                echo 'Message has been sent';
+            } else {
+                echo "Mailer Error: " . $mail->ErrorInfo;
+            }
+            
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
