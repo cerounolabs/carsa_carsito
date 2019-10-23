@@ -65,11 +65,19 @@
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
             $mail->Host         = '192.168.16.85';
-            /*$mail->SMTPAuth     = false;
+            $mail->SMTPAuth     = true;
             $mail->Username     = 'test@carsa.com.py';
             $mail->Password     = 'Argentina_1979';
-            $mail->SMTPSecure   = false;*/
+            $mail->SMTPSecure   = 'tls';
             $mail->Port         = 25;
+
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
 
             $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
