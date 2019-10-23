@@ -74,7 +74,7 @@
 
 
             $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
-            $mail->addAddress('zelaya26@gmail.com');
+            $mail->addAddress('christian@cerouno.com.py');
 
             $mail->isHTML(true);
             $mail->Subject      = 'Here is the subject';
