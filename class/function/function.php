@@ -59,16 +59,16 @@
     }
 
     function setEmail($var01, $var02){
-        $mail = new PHPMailer(true);
+        $mail = new PHPMailer();
 
         try {
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
             $mail->Host         = '192.168.16.85';
-            $mail->SMTPAuth     = true;
+            $mail->SMTPAuth     = false;
             $mail->Username     = 'test@carsa.com.py';
             $mail->Password     = 'Argentina_1979';
-            $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->SMTPSecure   = false;
             $mail->Port         = 25;
 
             $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
