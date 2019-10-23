@@ -65,7 +65,7 @@
             $mail->SMTPDebug    = 2;
             $mail->isSMTP();
             $mail->Host         = '192.168.16.85';
-            $mail->SMTPAuth     = false;
+            $mail->SMTPAuth     = true;
             $mail->Username     = 'test@carsa.com.py';
             $mail->Password     = 'Argentina_1979';
             $mail->SMTPSecure   = false;
@@ -75,18 +75,31 @@
             $mail->addAddress('christian@cerouno.com.py');
 
             $mail->isHTML(true);
-            $mail->Subject      = 'Here is the subject';
-            $mail->Body         = 'This is the HTML message body <b>in bold!</b>';
-            $mail->AltBody      = 'This is the body in plain text for non-HTML mail clients';
+            $mail->Subject      = 'Prueba ASUNTO';
+            $mail->Body         = 'Prueba CUERPO';
+            $mail->AltBody      = 'Prueba PIE';
         
             if(!$mail->Send()) {
-                echo 'Message has been sent';
+                echo 'OK';
             } else {
                 echo "Mailer Error: " . $mail->ErrorInfo;
             }
             
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            echo "Mailer Error: {$mail->ErrorInfo}";
         }
     }
 ?>
+
+
+2019-10-23 14:27:31 SERVER -> CLIENT: 220 mail.carsa.com.py ESMTP Postfix
+2019-10-23 14:27:31 CLIENT -> SERVER: EHLO mifactura.carsa.com.py
+2019-10-23 14:27:31 SERVER -> CLIENT: 250-mail.carsa.com.py250-PIPELINING250-SIZE 20480000250-VRFY250-ETRN250-STARTTLS250-ENHANCEDSTATUSCODES250-8BITMIME250 DSN
+2019-10-23 14:27:31 CLIENT -> SERVER: STARTTLS
+2019-10-23 14:27:31 SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+SMTP Error: Could not connect to SMTP host.
+2019-10-23 14:27:31 CLIENT -> SERVER: QUIT
+2019-10-23 14:27:31 SERVER -> CLIENT:
+2019-10-23 14:27:31 SMTP ERROR: QUIT command failed:
+SMTP Error: Could not connect to SMTP host.
+Message could not be sent. Mailer Error: SMTP Error: Could not connect to SMTP host.
