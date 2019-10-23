@@ -74,6 +74,7 @@
                         top: 100px;
                         margin: auto; /* Added */
                         float: none; /* Added */
+                        border: 1px solid cadetblue;
                     }
                 </style>
         
@@ -84,7 +85,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header" style="background:#27464e; color:#fff; font-weight:bold; height:60px; font-size:20px;">
+                                <div class="card-header" style="background:#27464e; color:#fff; font-weight:bold; height:50px; font-size:20px;">
                                     C.A.R.S.A. PIN DE ACCESO
                                 </div>
                                 
