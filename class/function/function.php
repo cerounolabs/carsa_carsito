@@ -120,11 +120,11 @@
             );
 
             $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A.');
-            $mail->addAddress('christian@cerouno.com.py');
+            $mail->addAddress($var01);
 
             $mail->isHTML(true);
             $mail->Subject      = 'C.A.R.S.A. ComprobanteWeb PIN';
-            $mail->Body         = 'Prueba CUERPO';
+            $mail->Body         = $mensaje;
         
             $mail->Send();
         } catch (Exception $e) {

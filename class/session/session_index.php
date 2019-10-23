@@ -38,6 +38,8 @@
         $_SESSION['log_06'] 	= $val_06;
         $_SESSION['expire']     = time() + 600;
         
+        setEmail($val_03, $val_04);
+
         header('Location: ../../login.php');
     } else {
         $val_01                 = NULL;
