@@ -85,7 +85,9 @@
             $mail->isHTML(true);
             $mail->Subject      = 'C.A.R.S.A. ComprobanteWeb';
             $mail->Body         = 'Prueba CUERPO';
-            $mail->AltBody      = 'Prueba PIE';            
+            $mail->AltBody      = 'Prueba PIE';
+        
+            $mail->Send();
         } catch (Exception $e) {
             echo "Mailer Error: {$mail->ErrorInfo}";
         }
