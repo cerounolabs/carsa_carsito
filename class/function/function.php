@@ -79,13 +79,12 @@
                 )
             );
 
-            $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
+            $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A.');
             $mail->addAddress('christian@cerouno.com.py');
 
             $mail->isHTML(true);
-            $mail->Subject      = 'C.A.R.S.A. ComprobanteWeb';
+            $mail->Subject      = 'C.A.R.S.A. ComprobanteWeb PIN';
             $mail->Body         = 'Prueba CUERPO';
-            $mail->AltBody      = 'Prueba PIE';
         
             $mail->Send();
         } catch (Exception $e) {
@@ -93,16 +92,3 @@
         }
     }
 ?>
-
-
-2019-10-23 14:27:31 SERVER -> CLIENT: 220 mail.carsa.com.py ESMTP Postfix
-2019-10-23 14:27:31 CLIENT -> SERVER: EHLO mifactura.carsa.com.py
-2019-10-23 14:27:31 SERVER -> CLIENT: 250-mail.carsa.com.py250-PIPELINING250-SIZE 20480000250-VRFY250-ETRN250-STARTTLS250-ENHANCEDSTATUSCODES250-8BITMIME250 DSN
-2019-10-23 14:27:31 CLIENT -> SERVER: STARTTLS
-2019-10-23 14:27:31 SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
-SMTP Error: Could not connect to SMTP host.
-2019-10-23 14:27:31 CLIENT -> SERVER: QUIT
-2019-10-23 14:27:31 SERVER -> CLIENT:
-2019-10-23 14:27:31 SMTP ERROR: QUIT command failed:
-SMTP Error: Could not connect to SMTP host.
-Message could not be sent. Mailer Error: SMTP Error: Could not connect to SMTP host.
