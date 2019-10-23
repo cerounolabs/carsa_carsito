@@ -184,13 +184,23 @@
     </script>
 
 <?php  
-    if ($codeRest == 401) {
+    if ($codeRest == 200) {
 ?>
-    <script>
-        $(function() {
-            toastr.error('<?php echo $msgRest; ?>', 'Error!');
-        });
-    </script>
+        <script>
+            $(function() {
+                toastr.success('<?php echo $msgRest; ?>', 'Correcto!');
+            });
+        </script>
+<?php
+    }
+    
+    if ($codeRest == 204 || $codeRest == 401) {
+?>
+        <script>
+            $(function() {
+                toastr.error('<?php echo $msgRest; ?>', 'Error!');
+            });
+        </script>
 <?php
     }
 ?>
