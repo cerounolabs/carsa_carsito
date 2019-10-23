@@ -69,7 +69,7 @@
             $mail->Username     = 'czelaya@it.com.py';
             $mail->Password     = 'fxiw~M3Lg%Qp';
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port         = 587;
+            $mail->Port         = 25;
 
             $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
