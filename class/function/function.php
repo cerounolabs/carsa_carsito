@@ -59,7 +59,7 @@
     }
 
     function setEmail($var01, $var02){
-        $mail = new PHPMailer();
+        $mail = new PHPMailer(true);
 
         try {
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
@@ -85,14 +85,7 @@
             $mail->isHTML(true);
             $mail->Subject      = 'C.A.R.S.A. ComprobanteWeb';
             $mail->Body         = 'Prueba CUERPO';
-            $mail->AltBody      = 'Prueba PIE';
-        
-            if(!$mail->Send()) {
-                echo 'OK';
-            } else {
-                echo "Mailer Error: " . $mail->ErrorInfo;
-            }
-            
+            $mail->AltBody      = 'Prueba PIE';            
         } catch (Exception $e) {
             echo "Mailer Error: {$mail->ErrorInfo}";
         }
