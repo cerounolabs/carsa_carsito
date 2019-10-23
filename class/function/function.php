@@ -65,11 +65,11 @@
             $mail->SMTPDebug    = 2;
             $mail->isSMTP();
             $mail->Host         = '192.168.16.85';
-            $mail->SMTPAuth     = true;
+            $mail->SMTPAuth     = false;
             $mail->Username     = 'test@carsa.com.py';
             $mail->Password     = 'Argentina_1979';
-            $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
-//            $mail->Port         = '25';
+            $mail->SMTPSecure   = false;
+            $mail->Port         = 25;
 
             $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
