@@ -74,6 +74,7 @@
                         top: 100px;
                         margin: auto; /* Added */
                         float: none; /* Added */
+                        background-color: #fff;
                         border: 1px solid cadetblue;
                     }
                 </style>
