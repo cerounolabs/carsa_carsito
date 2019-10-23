@@ -84,12 +84,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header" style="background:#27464e; color:#fff; font-weight:bold;">
+                                <div class="card-header" style="background:#27464e; color:#fff; font-weight:bold; height:60px; font-size:20px;">
                                     C.A.R.S.A. PIN DE ACCESO
                                 </div>
                                 
                                 <div class="card-body">
-                                    <h1 class="card-title"><p class="text-center" style="font-size:48px;">'.$var02.'</p></h1>
+                                    <h1 class="card-title"><p class="text-center" style="font-size:60px;">'.$var02.'</p></h1>
                                 </div>
                             </div>
                         </div>

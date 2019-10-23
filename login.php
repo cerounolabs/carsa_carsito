@@ -39,8 +39,6 @@
     } else {
         $codeRest       = 0;
     }
-
-    echo $log_04;
 ?>
 
 <!DOCTYPE html>
