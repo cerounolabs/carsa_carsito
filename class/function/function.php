@@ -59,7 +59,7 @@
     function setEmail($var01, $var02){
         require '../../vendor/autoload.php';
 
-        $mail = new PHPMailer(true);
+        $mail = new PHPMailer();
 
         $mensaje = '<!DOCTYPE html>
         <html lang="es">
@@ -102,7 +102,7 @@
         </html>';
 
         try {
-            $mail->SMTPDebug    = 1;
+            $mail->SMTPDebug    = 0;
             $mail->isSMTP();
             $mail->Host         = '192.168.16.85';
             $mail->SMTPAuth     = true;
