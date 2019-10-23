@@ -71,7 +71,7 @@
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port         = 587;
 
-            $mail->setFrom('contactos@it.com.py', 'C.A.R.S.A. MI FACTURA');
+            $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
 
             $mail->isHTML(true);
