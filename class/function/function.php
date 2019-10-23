@@ -59,7 +59,7 @@
     function setEmail($var01, $var02){
         require '../../vendor/autoload.php';
 
-        $mail = new PHPMailer();
+        $mail = new PHPMailer(true);
 
         try {
 //            $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
@@ -71,7 +71,6 @@
 
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port         = 587;
-
 
             $mail->setFrom('czelaya@it.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
