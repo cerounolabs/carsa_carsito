@@ -59,7 +59,7 @@
     }
 
     function setEmail($var01, $var02){
-        $mail = new PHPMailer();
+        $mail = new PHPMailer(true);
 
         try {
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
