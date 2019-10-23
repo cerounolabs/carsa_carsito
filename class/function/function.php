@@ -59,7 +59,7 @@
     }
 
     function setEmail($var01, $var02){
-        $mail = new PHPMailer(true);
+        $mail = new PHPMailer();
 
         try {
             $mail->SMTPDebug    = SMTP::DEBUG_SERVER;
@@ -72,7 +72,7 @@
             $mail->Port         = 25;
 
             $mail->SMTPOptions = array(
-                'ssl' => array(
+                'tls' => array(
                     'verify_peer' => false,
                     'verify_peer_name' => false,
                     'allow_self_signed' => true
@@ -83,7 +83,7 @@
             $mail->addAddress('christian@cerouno.com.py');
 
             $mail->isHTML(true);
-            $mail->Subject      = 'Prueba ASUNTO';
+            $mail->Subject      = 'C.A.R.S.A. ComprobanteWeb';
             $mail->Body         = 'Prueba CUERPO';
             $mail->AltBody      = 'Prueba PIE';
         
