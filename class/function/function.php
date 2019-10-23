@@ -69,7 +69,7 @@
             $mail->Username     = 'test@carsa.com.py';
             $mail->Password     = 'Argentina_1979';
             $mail->SMTPSecure   = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port         = 25;
+            $mail->Port         = '587';
 
             $mail->setFrom('test@carsa.com.py', 'C.A.R.S.A. MI FACTURA');
             $mail->addAddress('christian@cerouno.com.py');
