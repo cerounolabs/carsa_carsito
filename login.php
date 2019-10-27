@@ -41,6 +41,8 @@
         $msgRest        = 'Favor verificar su correo '.$log_03.' para ver el PIN';
 
     }
+
+    echo $log_04;
 ?>
 
 <!DOCTYPE html>

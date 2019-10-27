@@ -28,7 +28,7 @@
 
     $resultJSON     = post_curl('000/index', $dataJSON);
     $resultJSON     = json_decode($resultJSON, true);
-
+echo json_encode($resultJSON);
     if ($resultJSON['code'] === 200) {
         $_SESSION['log_01']     = $val_01;
         $_SESSION['log_02']     = $val_02;
@@ -40,7 +40,7 @@
         
         setEmail($val_03, $val_04);
 
-        header('Location: ../../login.php');
+//        header('Location: ../../login.php');
     } else {
         $val_01                 = NULL;
         $val_02                 = NULL;
@@ -49,6 +49,6 @@
         $val_05                 = NULL;
         $val_06                 = NULL;
 
-        header('Location: ../../class/session/session_logout.php');
+//        header('Location: ../../class/session/session_logout.php');
     }
 ?>
