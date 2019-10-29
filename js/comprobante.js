@@ -16,7 +16,7 @@ $(document).ready(function() {
 		fecHasta = document.getElementById('fechaHasta').value;
 	}
 	
-	var urlDominio	= 'http://api.carsa.com.py/carsito_api/public/v1/200/'+codigo+'/'+fecDesde+'/'+fecHasta+'/'+estadoOpe;
+	var urlDominio	= 'https://api.carsa.com.py/carsito_api/public/v1/200/'+codigo+'/'+fecDesde+'/'+fecHasta+'/'+estadoOpe;
 	
 	$('#tableLoad').DataTable({
 		processing	: true,

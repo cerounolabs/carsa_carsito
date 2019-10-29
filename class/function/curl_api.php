@@ -1,5 +1,5 @@
 <?php
-    $api = 'http://api.carsa.com.py/carsito_api/public/v1';
+    $api = 'https://api.carsa.com.py/carsito_api/public/v1';
 
     function get_curl($ext){
         global $api;
