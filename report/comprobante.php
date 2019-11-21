@@ -80,7 +80,7 @@
             $subTitulo = '(RE-IMPRESO)';
         }
 
-        $mpdf -> SetTitle('C.A.R.S.A. | CARSITO');
+        $mpdf -> SetTitle('C.A.R.S.A. | MI FACTURA');
 
         $mpdf -> WriteHTML('<body>');
 
