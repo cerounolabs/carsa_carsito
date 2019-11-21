@@ -8,6 +8,10 @@
 
     if(isset($_GET['id1'])){ 
         $idComprobante = $_GET['id1'];
+
+        if ($idComprobante == '20191119125416810'){
+            $idComprobante = '20191119125416808';
+        }
     }
 
     if ($idComprobante <> 0){
