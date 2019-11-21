@@ -109,7 +109,7 @@
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> FACTURA '.$subTitulo.' </p>');
 
             if (isset($row_33_cabecera)){
-                $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> ANULADO POR '.$row_34_cabecera.' </p>');
+                $mpdf -> WriteHTML('<p style="margin:0px; text-align:center; font-weight:bold; background-color:#FFFFCC;"> ANULADO POR '.$row_34_cabecera.' </p>');
             }
 
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Condición de Venta: '.$row_28_cabecera.' </p>');
@@ -125,7 +125,7 @@
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> RECIBO DE DINERO '.$subTitulo.'</p>');
 
             if (isset($row_33_cabecera)){
-                $mpdf -> WriteHTML('<p style="margin:0px; text-align:center;"> ANULADO POR '.$row_34_cabecera.' </p>');
+                $mpdf -> WriteHTML('<p style="margin:0px; text-align:center; font-weight:bold; background-color:#FFFFCC;"> ANULADO POR '.$row_34_cabecera.' </p>');
             }
 
             $mpdf -> WriteHTML('<p style="margin:0px; text-align:left;"> Mov. Nº: '.$row_08_cabecera.' </p>');
