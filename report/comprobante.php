@@ -12,6 +12,10 @@
         if ($idComprobante == '20191119125416810'){
             $idComprobante = '20191119125416808';
         }
+
+        if ($idComprobante == '20200120111326750'){
+            $idComprobante = '20200120111326752';
+        }
     }
 
     if ($idComprobante <> 0){
