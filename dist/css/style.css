@@ -5273,7 +5273,11 @@ button.bg-danger:focus {
   background-color: #ea4040 !important; }
 
 .bg-light {
-  background-color: #f8f9fa !important; }
+  background-color: #f8f9fa !important;
+  background-color: #ce9d53 !important;
+  color: #ffffff;
+  text-align: center;
+ }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
