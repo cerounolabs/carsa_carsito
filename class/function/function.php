@@ -109,7 +109,7 @@
             $mail->Host         = '192.168.16.85';
             $mail->SMTPAuth     = true;
             $mail->Username     = 'test@carsa.com.py';
-            $mail->Password     = 'TL6coJ8Smd';
+            $mail->Password     = 'Paraguay2020';
             $mail->SMTPSecure   = 'tls';
             $mail->Port         = 25;
 
